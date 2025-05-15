@@ -1,0 +1,66 @@
+{
+  "id": "item001",
+  "type": "product",
+  "name": "Smartphone X200",
+  "brand": "TechNova",
+  "specs": {
+    "screenSize": "6.5 inch",
+    "battery": "4500mAh",
+    "storage": "128GB"
+  },
+  "price": 799.99
+}
+
+{
+  "id": "item002",
+  "type": "customer",
+  "firstName": "Liam",
+  "lastName": "King",
+  "email": "liam.king@example.com",
+  "loyaltyLevel": "Gold",
+  "signupDate": "2023-03-05T10:00:00Z"
+}
+
+
+{
+  "id": "item003",
+  "type": "support_ticket",
+  "ticketId": "TK10045",
+  "customerId": "item002",
+  "issue": "Battery overheating",
+  "status": "Open",
+  "createdOn": "2025-04-20T11:12:00Z",
+  "productId": "item001"
+}
+
+{
+  "id": "item004",
+  "type": "inventory_update",
+  "warehouse": "WH-21",
+  "updates": [
+    {
+      "productId": "item001",
+      "stockChange": +50,
+      "timestamp": "2025-04-21T08:00:00Z"
+    },
+    {
+      "productId": "item005",
+      "stockChange": -20,
+      "timestamp": "2025-04-21T08:01:00Z"
+    }
+  ]
+}
+
+{
+  "id": "item005",
+  "type": "sensor_reading",
+  "sensorId": "sensor-A23",
+  "location": "Warehouse 3",
+  "readings": {
+    "temperature": 21.5,
+    "humidity": 55.2
+  },
+  "timestamp": "2025-04-22T09:15:00Z"
+}
+
+SELECT * FROM Items i WHERE i.type = 'product' AND i.price > 500
