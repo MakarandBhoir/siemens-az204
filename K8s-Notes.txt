@@ -1,0 +1,25 @@
+1. To create deployment object once again with image from docker hub
+  
+  kubectl create deployment first-app --image=bhoirmakarand/kubernetes-starter-app
+  kubectl get deployment
+  kubectl get pods
+
+2. To exposes pods to the cluster or externally we used service object. Pods has internal IP address that gets change very often. Services group pods with shared IP address. Services can allow external access to pods.
+Without services, pods are very hard to reach and communication is difficult. Reaching a pod from outside the cluster is not possible at all without service
+
+  kubectl expose deployment first-app --type=LoadBalancer --port 8080
+  kubectl get services
+
+3. To test application use
+    http://external-ip:port
+
+4. To scale-up
+  kubectl scale deployment/first-app --replicas=3
+  kubectl get pods
+
+5. To attach AKS with azure container registry
+az aks update -n <aks-cluster-name> -g <resource-group-name> --attach-acr <acr-name>
+
+
+
+
